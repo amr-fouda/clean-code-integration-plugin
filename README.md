@@ -1,13 +1,30 @@
 # clean-code-integration-plugin
-Sample java 8 maven project that integrates with PMD & checkstyle code analysis plugins using maven default build life cycle
+Sample java 8 maven project that integrates with PMD code analysis plugin using maven default build life cycle
 
 ## PMD plugin description 
 PMD is a Maven plugin that produces a report on both code rule violations and detected copy and paste fragments, as well as being able to fail the build based on these metrics. 
 
 ## How to run  
-Either triggering maven plugin directly (mvn pmd:check) Or by registering a goal to the default life cycle phases
+Either triggering maven plugin directly (mvn pmd:check) or by registering a goal to the default life cycle phases
 
-Available parameters for the check goal:
+## Plugin sample in POM.xml
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-pmd-plugin</artifactId>
+    <configuration>
+        <verbose>true</verbose>
+     </configuration>
+     <executions>
+        <execution>
+            <goals>
+                <goal>check</goal>
+            </goals>
+        </execution>
+      </executions>
+</plugin>
+```
+## Available parameters for the check goal:
 
     aggregate (Default: false)
       User property: aggregate
